@@ -3,257 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Home Battery Quotes — Beat Peak Rates & Blackouts | Powershift Energy Co</title>
-  <meta name="description" content="Get a free home battery quote from CEC-accredited installers in Brisbane, Gold Coast and Perth. Store solar, dodge peak rates, survive blackouts.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Free Home Battery Quote | Powershift Energy Co — Brisbane, Gold Coast & Perth</title>
+  <meta name="description" content="Power your home day and night. Free, no-obligation home battery storage quotes from certified installers in Brisbane, Gold Coast and Perth.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
-<body class="page-battery">
+<body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <nav class="nav-inner">
-      <a href="index.html" class="logo">⚡ <span>Powershift</span> Energy Co</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <i></i><i></i><i></i>
-      </button>
-      <div class="nav-links">
-        <a href="solar.html">Solar</a>
-        <a href="battery.html" class="active">Batteries</a>
-        <a href="ev-charger.html">EV Chargers</a>
-        <a href="electricians.html">For Installers</a>
-        <a href="tel:0427430088" class="nav-phone">📞 0427 430 088</a>
-      </div>
-    </nav>
-  </header>
+  <!-- Nav -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        Powershift <span>Energy Co</span>
+      </a>
+      <a href="tel:1800000000" class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.8 19.79 19.79 0 01.78 1.17 2 2 0 012.76 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        1800 000 000
+      </a>
+      <a href="#get-quote" class="nav-cta">Get Free Quote</a>
+    </div>
+  </nav>
 
-  <main>
+  <!-- Hero -->
+  <section class="hero hero-battery" id="get-quote">
+    <div class="container hero-grid">
 
-    <!-- Hero + Form -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="badge">🔋 Beat the Peak-Rate Rip-Off</div>
-            <h1>Power Your Home Day and Night — Even When the Grid Goes Down</h1>
-            <p>Your solar panels generate power all day. Without a battery, you're giving it to the grid for cents — then buying it back at peak rates after dark. That's money walking out your door every single evening.</p>
-            <p style="color:rgba(255,255,255,0.75);margin-top:12px;">A home battery stores your solar energy and uses it when electricity costs the most. No more peak-rate gouging. No more blackout anxiety. Just cheap, reliable power — on your terms.</p>
-            <ul class="hero-trust">
-              <li>✅ CEC-Accredited Installers</li>
-              <li>✅ Blackout Protection</li>
-              <li>✅ 100% Free Quotes</li>
-              <li>✅ Local Specialists Only</li>
-            </ul>
+      <div class="hero-copy">
+        <div class="hero-badge indigo-badge">🔋 Beat the Peak-Rate Rip-Off</div>
+        <h1>Power Your Home <em class="indigo">Day and Night</em> — Even When the Grid Goes Down</h1>
+        <p class="hero-sub">
+          Store cheap solar energy and use it when power is most expensive. Free quotes from certified battery installers in Brisbane, Gold Coast and Perth.
+        </p>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Blackout protection
           </div>
-          <div>
-            <div class="form-card">
-              <h2>Get Your Free Battery Quote</h2>
-              <p class="form-sub">60 seconds. No obligation. A local installer calls you within 2 hours.</p>
-              <form action="https://formspree.io/f/xvzdpgje" method="POST" data-formspree>
-                <input type="hidden" name="service" value="Home Battery">
-                <input type="hidden" name="page" value="battery.html">
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" required placeholder="e.g. Sarah Johnson">
-                  <div class="form-error-msg"></div>
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX">
-                  <div class="form-error-msg"></div>
-                </div>
-                <div class="form-group">
-                  <label for="postcode">Postcode</label>
-                  <input type="text" id="postcode" name="postcode" required placeholder="e.g. 4000" maxlength="4">
-                  <div class="form-error-msg"></div>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required placeholder="you@example.com">
-                  <div class="form-error-msg"></div>
-                </div>
-                <div class="form-group">
-                  <label for="solar">Do You Have Solar?</label>
-                  <select id="solar" name="has_solar" required>
-                    <option value="">Select an option</option>
-                    <option value="Yes – Existing Solar">Yes — Existing Solar</option>
-                    <option value="No – Getting Solar Too">No — Getting Solar Too</option>
-                    <option value="No – Grid Only">No — Grid Only</option>
-                  </select>
-                  <div class="form-error-msg"></div>
-                </div>
-                <div class="form-group">
-                  <label for="bill">Average Quarterly Bill</label>
-                  <select id="bill" name="quarterly_bill" required>
-                    <option value="">Select your bill range</option>
-                    <option value="Under $300">Under $300</option>
-                    <option value="$300–$500">$300–$500</option>
-                    <option value="$500–$800">$500–$800</option>
-                    <option value="$800–$1,200">$800–$1,200</option>
-                    <option value="Over $1,200">Over $1,200</option>
-                  </select>
-                  <div class="form-error-msg"></div>
-                </div>
-                <button type="submit" class="form-submit indigo">🔋 Get My Free Battery Quote →</button>
-                <p class="form-note">No spam. No obligation. Just a quick call from a local installer.</p>
-              </form>
-            </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Certified installers only
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Maximise your solar investment
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            100% free, no obligation
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Benefits -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <h2>Why Smart Homeowners Are Adding Batteries</h2>
+      <div class="form-card">
+        <h3>Get Your Free Battery Quote</h3>
+        <p class="form-sub">Takes 60 seconds · No spam · We call you</p>
+
+        <form class="lead-form" action="https://formspree.io/f/FORMSPREE_FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="service" value="Home Battery">
+          <input type="hidden" name="page" value="battery.html">
+
+          <div class="form-group focus-indigo">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+
+          <div class="form-group form-row">
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="postcode">Postcode</label>
+              <input type="text" id="postcode" name="postcode" placeholder="4000" required maxlength="4" inputmode="numeric">
+            </div>
+          </div>
+
+          <div class="form-group focus-indigo">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group focus-indigo">
+            <label for="has-solar">Do you already have solar panels?</label>
+            <select id="has-solar" name="has_solar" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Yes — existing solar">Yes — I have existing solar</option>
+              <option value="No — getting solar too">No — I'd like solar + battery together</option>
+              <option value="No — grid only">No — grid-connected battery only</option>
+            </select>
+          </div>
+
+          <div class="form-group focus-indigo">
+            <label for="bill">Average Quarterly Power Bill</label>
+            <select id="bill" name="bill" required>
+              <option value="" disabled selected>Select your bill range</option>
+              <option value="Under $300">Under $300</option>
+              <option value="$300–$500">$300–$500</option>
+              <option value="$500–$800">$500–$800</option>
+              <option value="$800–$1,200">$800–$1,200</option>
+              <option value="Over $1,200">Over $1,200</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn btn-submit-indigo">
+            🔋 Get My Free Battery Quote →
+          </button>
+        </form>
+        <p class="form-privacy">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Your details are safe. We never sell your information.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-bar-item"><span class="icon">🏅</span> Certified Battery Installers</div>
+      <div class="trust-bar-item"><span class="icon">⚡</span> Blackout Protection Included</div>
+      <div class="trust-bar-item"><span class="icon">📞</span> Called Within 2 Hours</div>
+      <div class="trust-bar-item"><span class="icon">🔋</span> Tesla Powerwall, SolarEdge & More</div>
+      <div class="trust-bar-item"><span class="icon">🔒</span> 100% Free, No Obligation</div>
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <section class="section section-off">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag green">Why Add a Battery?</span>
+        <h2>Stop Paying Peak Rates. Start Owning Your Energy.</h2>
+        <p style="color:var(--text-muted);max-width:560px;margin:12px auto 0;">A home battery stores cheap energy and releases it when you need it most — cutting your reliance on the grid to near zero.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon icon-indigo">🌙</div>
+          <h3>Use Your Solar After Dark</h3>
+          <p>Without a battery, excess solar is exported for a low feed-in rate. With one, you use it yourself at night — worth 3–4× more.</p>
         </div>
-        <div class="cards-grid cols-3">
-          <div class="benefit-card">
-            <div class="icon">🌙</div>
-            <h3>Use Your Solar After Dark</h3>
-            <p>Without a battery, your solar power vanishes at sunset. With one, you store it and use it when you actually need it — cooking dinner, running the aircon, charging devices overnight.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="icon">🛡️</div>
-            <h3>Blackout Protection</h3>
-            <p>When the grid fails, your lights stay on. A battery with backup capability keeps your fridge, Wi-Fi, lights and medical devices running through storms and outages.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="icon">📉</div>
-            <h3>Dodge Peak Rates</h3>
-            <p>Electricity retailers charge 2–3x more between 4pm and 9pm. A battery lets you avoid every cent of it. Store cheap daytime solar, deploy it when rates spike.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="icon">🔌</div>
-            <h3>Near-Zero Grid Dependence</h3>
-            <p>Solar + battery households can self-consume 80–90% of their energy. You're no longer at the mercy of rate hikes, network charges, or retailer games.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="icon">📱</div>
-            <h3>Monitor from Your Phone</h3>
-            <p>Every major battery brand includes an app. Watch your energy flow in real time — see what you're generating, storing and saving, all from your couch.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="icon">🔮</div>
-            <h3>Future-Proof Your Home</h3>
-            <p>With electricity prices climbing 15–20% year-on-year and EVs going mainstream, battery storage isn't a luxury anymore. It's infrastructure. Get ahead of the curve.</p>
-          </div>
+        <div class="card">
+          <div class="card-icon icon-green">🔦</div>
+          <h3>Blackout Protection</h3>
+          <p>Keep your lights, fridge, and essentials running during grid outages. Perfect for storm-prone SE Queensland.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-indigo">📉</div>
+          <h3>Dodge Peak Electricity Rates</h3>
+          <p>Charge overnight on cheap off-peak tariffs and discharge during expensive peak hours (4pm–9pm). Saves hundreds per year.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-green">🌱</div>
+          <h3>Near-Zero Grid Dependence</h3>
+          <p>Solar + battery can cover 80–100% of a home's energy needs. You become your own power station.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-indigo">📱</div>
+          <h3>Monitor From Your Phone</h3>
+          <p>Modern batteries come with apps showing real-time usage, charging status, and savings. Full visibility, anywhere.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-green">💎</div>
+          <h3>Future-Proof Your Home</h3>
+          <p>As electricity prices rise year on year, your battery gets more valuable. Lock in energy independence today.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How It Works -->
-    <section class="alt">
-      <div class="container">
-        <div class="section-header">
-          <h2>How It Works</h2>
-          <p>Three steps. 60 seconds. Zero cost.</p>
+  <!-- How It Works -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag indigo">Simple Process</span>
+        <h2 class="text-white">How It Works</h2>
+        <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:12px auto 0;">A battery quote and install is simpler than most people think.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num indigo">1</div>
+          <h3>Tell Us About Your Home</h3>
+          <p>Fill in the quick form — takes 60 seconds. Whether you have solar already or want both together, we'll find the right solution.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h3>Tell Us About Your Home</h3>
-            <p>Postcode, bill size, and whether you already have solar. Takes 60 seconds.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h3>We Match You Locally</h3>
-            <p>We pair you with a CEC-accredited battery installer in Brisbane, Gold Coast or Perth.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h3>Get Your Free Quote</h3>
-            <p>Your installer calls within 2 hours with a recommendation tailored to your home and budget.</p>
-          </div>
+        <div class="step">
+          <div class="step-num indigo">2</div>
+          <h3>Speak to a Local Expert</h3>
+          <p>A certified battery installer in your area calls you within 2 hours to assess your setup and recommend the right battery size.</p>
+        </div>
+        <div class="step">
+          <div class="step-num indigo">3</div>
+          <h3>Get Installed & Start Saving</h3>
+          <p>Most residential battery installs take just one day. Your installer handles all the paperwork, wiring, and commissioning.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <h2>Battery Questions, Answered</h2>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question">How much does a home battery cost?</button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">A quality home battery system typically costs $8,000–$16,000 installed, depending on capacity, brand and whether you need backup capability. Popular options like the Tesla Powerwall 2 sit around $12,000–$14,000 fully installed. Your installer will recommend the right size based on your usage and solar system.</div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Do I need solar to get a battery?</button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">No, but it makes the most financial sense when paired with solar. A battery without solar can still save you money by charging from the grid during off-peak hours and discharging during peak, but the real savings come from storing free solar energy. If you don't have solar yet, many installers will quote you for both together.</div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">What brands do your installers use?</button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">Our installer partners work with all major battery brands including Tesla Powerwall, BYD, Enphase, Alpha ESS, SolarEdge, Sungrow and more. They'll recommend the best fit for your home based on your solar setup, usage patterns and budget — not just whatever gives them the highest margin.</div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Will my battery work during a blackout?</button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">Only if it has backup capability — and not all do by default. Some batteries (like the Tesla Powerwall) include backup as standard. Others need an additional backup box or gateway. Make sure you tell your installer you want blackout protection so they can quote the right setup.</div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Are there rebates for batteries?</button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">Battery rebates vary by state. Some state governments offer rebates of $3,000–$4,000 for eligible households. Your installer will know exactly what's available in your area and handle the paperwork. The federal government doesn't currently offer battery-specific STCs, but this may change — another reason to act now while state rebates last.</div>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How much does a home battery cost in Australia?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              A quality 10kWh battery system (like the Tesla Powerwall 2 or SolarEdge Energy Bank) typically costs $12,000–$16,000 installed. Smaller 5kWh systems start around $8,000. The right size depends on your daily usage. State subsidies in QLD and VIC can reduce this significantly.
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-      <div class="container">
-        <h2>Stop Paying Peak Rates for Your Own Solar Energy</h2>
-        <p>Get a free battery quote from a CEC-accredited installer. No obligation. Called within 2 hours.</p>
-        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn btn-indigo" style="background:var(--indigo);color:var(--white);">🔋 Get My Free Battery Quote →</a>
-      </div>
-    </section>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need solar panels to get a battery?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              No — you can install a grid-connected battery that charges overnight on cheap off-peak rates and discharges during expensive peak hours. That said, the economics are much better with solar. If you're interested in both, we can bundle them for a better deal.
+            </div>
+          </div>
+        </div>
 
-  </main>
+        <div class="faq-item">
+          <button class="faq-question">
+            What brands do your installers use?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our installers work with leading brands including Tesla Powerwall, SolarEdge Energy Bank, Sungrow SBR, Alpha-ESS, and BYD. They'll recommend the best fit for your existing solar setup (if any), budget, and usage profile.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Will a battery actually power my home during a blackout?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — batteries with backup capability (like the Powerwall) automatically switch to backup mode when the grid goes down. A fully charged 13.5kWh Powerwall can power an average home for 24+ hours. Most homes run essentials (lights, fridge, phone charging) for 2–3 days.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Are there any government rebates for batteries?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Queensland's interest-free loan scheme (Household Battery Program) offers up to $4,000 for eligible households. Western Australia has recently introduced incentives as part of their energy storage push. Your installer will confirm current eligibility based on your location and setup.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section indigo-cta">
+    <div class="container">
+      <h2>Ready to Take Control of Your Energy?</h2>
+      <p>Free quote · No obligation · Local installers · Called within 2 hours</p>
+      <a href="#get-quote" class="btn btn-white btn-lg">Get My Free Battery Quote →</a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-col">
-          <h4>⚡ Powershift Energy Co</h4>
-          <p>Connecting Australian homeowners with certified clean energy installers. Free quotes, no obligation.</p>
-          <a href="tel:0427430088" class="phone-link" style="margin-top:12px;display:inline-block;">📞 0427 430 088</a>
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            Powershift <span>Energy Co</span>
+          </a>
+          <p>Connecting Australian homeowners with trusted local renewable energy installers.</p>
         </div>
-        <div class="footer-col">
+        <div class="footer-links">
           <h4>Services</h4>
-          <a href="solar.html">Solar Panels</a>
-          <a href="battery.html">Home Batteries</a>
-          <a href="ev-charger.html">EV Chargers</a>
+          <ul>
+            <li><a href="solar.html">Solar Panels</a></li>
+            <li><a href="battery.html">Home Batteries</a></li>
+            <li><a href="ev-charger.html">EV Chargers</a></li>
+          </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-links">
           <h4>Company</h4>
-          <a href="electricians.html">For Installers</a>
-          <a href="tel:0427430088">Contact Us</a>
-        </div>
-        <div class="footer-col">
-          <h4>Locations</h4>
-          <p>Brisbane · Gold Coast · Perth</p>
+          <ul>
+            <li><a href="electricians.html">For Electricians</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="tel:1800000000">Call Us</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Powershift Energy Co. All rights reserved.</span>
-        <span>Brisbane · Gold Coast · Perth</span>
+        <p>© 2025 Powershift Energy Co. All rights reserved.</p>
+        <p class="footer-areas">Serving Brisbane · Gold Coast · Perth</p>
       </div>
     </div>
   </footer>

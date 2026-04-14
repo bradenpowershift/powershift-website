@@ -1,153 +1,118 @@
-/* ============================================
-   Powershift Energy Co — Form & FAQ Logic
-   Vanilla JS · No frameworks
-   ============================================ */
+/* ============================================================
+   POWERSHIFT ENERGY CO — Form Handler + FAQ Accordion
+   ============================================================
+   Form submissions use Formspree (https://formspree.io).
+   Sign up free → create a form → replace FORMSPREE_FORM_ID
+   in each HTML page's <form action="..."> attribute.
+   ============================================================ */
 
-(function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', function () {
 
-  // --- FAQ Accordion ---
-  document.querySelectorAll('.faq-question').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item = btn.closest('.faq-item');
-      var answer = item.querySelector('.faq-answer');
-      var isOpen = item.classList.contains('open');
+  /* ── Lead Form Submission ── */
+  const leadForms = document.querySelectorAll('.lead-form');
 
-      // Close all others in same list
-      item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(function (openItem) {
-        if (openItem !== item) {
-          openItem.classList.remove('open');
-          openItem.querySelector('.faq-answer').style.maxHeight = '0';
-        }
-      });
-
-      if (isOpen) {
-        item.classList.remove('open');
-        answer.style.maxHeight = '0';
-      } else {
-        item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      }
-    });
-  });
-
-  // --- Mobile Nav Toggle ---
-  var toggle = document.querySelector('.nav-toggle');
-  var navLinks = document.querySelector('.nav-links');
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-  }
-
-  // --- Form Validation & Submission ---
-  document.querySelectorAll('form[data-formspree]').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
+  leadForms.forEach(function (form) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      if (!validateForm(form)) return;
 
-      var btn = form.querySelector('.form-submit');
-      var originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.classList.add('loading');
+      const btn = form.querySelector('.submit-btn');
+      const originalHTML = btn.innerHTML;
+      const data = Object.fromEntries(new FormData(form));
 
-      var formData = new FormData(form);
+      // Loading state
+      btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Sending...';
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function (response) {
-          if (response.ok) {
-            showSuccess(form);
-          } else {
-            throw new Error('Submission failed');
-          }
-        })
-        .catch(function () {
-          btn.textContent = originalText;
-          btn.classList.remove('loading');
-          showError(form);
-        });
+      try {
+        const action = form.getAttribute('action');
+
+        // If Formspree ID has been set, submit for real
+        if (action && !action.includes('FORMSPREE_FORM_ID')) {
+          const response = await fetch(action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+
+          if (!response.ok) throw new Error('Submission failed');
+        } else {
+          // Demo mode — simulate network delay
+          await new Promise(r => setTimeout(r, 1200));
+        }
+
+        showSuccess(form, data);
+
+      } catch (err) {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+
+        const errMsg = form.querySelector('.form-error') || createErrorMsg(form);
+        errMsg.textContent = 'Something went wrong. Please call us directly or try again.';
+        errMsg.style.display = 'block';
+      }
     });
   });
 
-  function validateForm(form) {
-    var valid = true;
+  function showSuccess(form, data) {
+    const name = data.name ? data.name.split(' ')[0] : 'there';
+    form.innerHTML = `
+      <div class="success-state">
+        <div class="success-icon">✓</div>
+        <h3>You're all set, ${name}!</h3>
+        <p>A local specialist will call you within <strong>2 hours</strong> during business hours.</p>
+        <p class="success-sub">Check your inbox — we've sent a confirmation to <strong>${data.email || 'your email'}</strong>.</p>
+      </div>
+    `;
+  }
 
-    // Clear previous errors
-    form.querySelectorAll('.form-group').forEach(function (g) {
-      g.classList.remove('has-error');
+  function createErrorMsg(form) {
+    const div = document.createElement('div');
+    div.className = 'form-error';
+    div.style.cssText = 'color:#EF4444;font-size:0.85rem;margin-top:10px;display:none;';
+    form.appendChild(div);
+    return div;
+  }
+
+
+  /* ── FAQ Accordion ── */
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function (item) {
+    const btn = item.querySelector('.faq-question');
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      const isOpen = item.classList.contains('open');
+      // Close all
+      faqItems.forEach(f => f.classList.remove('open'));
+      // Toggle current
+      if (!isOpen) item.classList.add('open');
     });
+  });
 
-    // Required fields
-    form.querySelectorAll('[required]').forEach(function (field) {
-      var group = field.closest('.form-group');
-      if (!field.value.trim()) {
-        group.classList.add('has-error');
-        group.querySelector('.form-error-msg').textContent = 'This field is required';
-        valid = false;
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+  });
 
-    // Phone: must start with 04 and be 10 digits
-    var phone = form.querySelector('[name="phone"]');
-    if (phone && phone.value.trim()) {
-      var cleaned = phone.value.replace(/\s/g, '');
-      if (!/^04\d{8}$/.test(cleaned)) {
-        var pg = phone.closest('.form-group');
-        pg.classList.add('has-error');
-        pg.querySelector('.form-error-msg').textContent = 'Enter a valid Australian mobile (04XX XXX XXX)';
-        valid = false;
-      }
-    }
 
-    // Email
-    var email = form.querySelector('[name="email"]');
-    if (email && email.value.trim()) {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-        var eg = email.closest('.form-group');
-        eg.classList.add('has-error');
-        eg.querySelector('.form-error-msg').textContent = 'Enter a valid email address';
-        valid = false;
-      }
-    }
-
-    // Postcode: exactly 4 digits
-    var postcode = form.querySelector('[name="postcode"]');
-    if (postcode && postcode.value.trim()) {
-      if (!/^\d{4}$/.test(postcode.value.trim())) {
-        var pcg = postcode.closest('.form-group');
-        pcg.classList.add('has-error');
-        pcg.querySelector('.form-error-msg').textContent = 'Enter a 4-digit postcode';
-        valid = false;
-      }
-    }
-
-    return valid;
+  /* ── Nav scroll shadow ── */
+  const nav = document.querySelector('.site-nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.style.boxShadow = window.scrollY > 10
+        ? '0 4px 24px rgba(0,0,0,0.3)'
+        : 'none';
+    }, { passive: true });
   }
 
-  function showSuccess(form) {
-    var card = form.closest('.form-card') || form.parentElement;
-    card.innerHTML =
-      '<div class="form-success">' +
-      '<div class="icon">✅</div>' +
-      '<h3>Thanks! We\'ve got your details.</h3>' +
-      '<p>A local installer will call you within 2 hours during business hours. No spam, no pressure — just a quick chat about your options.</p>' +
-      '</div>';
-  }
-
-  function showError(form) {
-    var existing = form.querySelector('.form-error-banner');
-    if (existing) existing.remove();
-
-    var banner = document.createElement('div');
-    banner.className = 'form-error-banner';
-    banner.style.cssText = 'background:#fef2f2;color:#dc2626;padding:12px;border-radius:8px;font-size:0.875rem;margin-bottom:14px;text-align:center;';
-    banner.textContent = 'Something went wrong. Please try again or call us on 0427 430 088.';
-    form.insertBefore(banner, form.firstChild);
-  }
-
-})();
+});
