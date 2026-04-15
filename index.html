@@ -146,6 +146,55 @@
       .how-grid     { grid-template-columns: 1fr; gap: 24px; }
       .why-grid     { grid-template-columns: 1fr; }
     }
+
+    .hub-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 768px) {
+      .hub-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .hub-trust-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+    @media (min-width: 768px) {
+      .hub-trust-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        max-width: 100%;
+      }
+    }
+    .hub-trust-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .hub-call {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 8px;
+    }
+    .hub-call a {
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -157,11 +206,17 @@
         <div class="logo-icon">⚡</div>
         Powershift <span>Energy Co</span>
       </a>
-      <a href="tel:0427430088" class="nav-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.8 19.79 19.79 0 01.78 1.17 2 2 0 012.76 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        0427 430 088
-      </a>
-      <a href="electricians.html" class="nav-cta">For Electricians</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="solar.html">☀️ Solar Panels</a>
+      <a href="battery.html">🔋 Home Batteries</a>
+      <a href="ev-charger.html">🚗 EV Chargers</a>
+      <a href="electricians.html">👷 For Installers</a>
+      <a href="index.html#about">ℹ️ About Us</a>
+      <a href="tel:0427430088">📞 0427 430 088</a>
     </div>
   </nav>
 
@@ -169,9 +224,18 @@
   <section class="hub-hero">
     <div class="container">
       <div class="hub-hero-inner">
-        <div class="hub-badge">🇦🇺 Brisbane · Gold Coast · Perth</div>
-        <h1>Australia's Clean Energy <em style="color:var(--amber);">Quote Platform</em></h1>
-        <p>Free quotes from vetted local installers. No pushy salespeople. Just qualified tradespeople in your area, ready to help.</p>
+        <div class="hub-badge">🇦🇺 Australia's Clean Energy Quote Platform</div>
+        <h1>Free Quotes from Certified Local Installers — In Under 2 Hours</h1>
+        <p>Whether it's solar panels, a home battery or an EV charger — we connect you with vetted, CEC-accredited installers in Brisbane, Gold Coast and Perth. No cost. No obligation. No spam.</p>
+        <a href="#services" class="btn btn-amber btn-lg" style="margin-bottom: 32px;">Get a Free Quote →</a>
+        <div class="hub-trust-badges" style="margin-top: 32px;">
+          <div class="hub-trust-item">✅ CEC-Accredited Installers</div>
+          <div class="hub-trust-item">✅ 100% Free Service</div>
+          <div class="hub-trust-item">✅ Called Within 2 Hours</div>
+          <div class="hub-trust-item">✅ Local Specialists Only</div>
+          <div class="hub-trust-item">✅ Vetted Partners</div>
+        </div>
+        <p class="hub-call">📞 Prefer to call? <a href="tel:0427430088">0427 430 088</a> — Mon–Sat, 7am–6pm</p>
       </div>
 
       <div class="hub-services" id="services">
@@ -242,7 +306,7 @@
   </section>
 
   <!-- Why Powershift -->
-  <section class="section section-dark">
+  <section class="section section-dark" id="about">
     <div class="container">
       <div class="why-grid">
         <div>

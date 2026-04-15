@@ -116,3 +116,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('navDropdown');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+    document.addEventListener('click', function(e) {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();

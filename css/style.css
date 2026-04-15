@@ -700,6 +700,48 @@ p  { line-height: 1.7; }
   .trust-bar-inner   { gap: 20px; }
   .stat-strip        { gap: 28px; }
   .footer-inner      { flex-direction: column; }
-  .nav-phone         { display: none; }
   .partner-form-card { padding: 24px 20px; }
+}
+
+.nav-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-hamburger svg { display: block; }
+.nav-cta { display: none !important; }
+.nav-phone { display: none !important; }
+.nav-dropdown {
+  display: none;
+  flex-direction: column;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 20px 16px;
+}
+.nav-dropdown.is-open { display: flex; }
+.nav-dropdown a {
+  display: block;
+  padding: 12px 16px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+.nav-dropdown a:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+.site-nav { position: relative; }
+
+/* ── Hero Call Line ── */
+.hero-call {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 16px;
+}
+.hero-call a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
 }
